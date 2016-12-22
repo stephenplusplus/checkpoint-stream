@@ -14,7 +14,7 @@ var checkpoint = require('checkpoint-stream')
 getObjectsStream()
   .on('error', function() {...})
   .pipe(checkpoint.obj(function(obj) {
-    return tyepof obj.token !== 'undefined'
+    return typeof obj.token !== 'undefined'
   }))
   .on('checkpoint', function(obj) {
     // the obj from `getObjectsStream()` that passed the `isCheckpointFn` test

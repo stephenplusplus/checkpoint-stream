@@ -32,7 +32,7 @@ function checkpointStream (config) {
     var shouldFlushQueue = false
 
     if (isCheckpoint) {
-      this.emit('checkpoint', chunk)
+      combinedStream.emit('checkpoint', chunk)
       shouldFlushQueue = true
     } else {
       if (combinedStream.queue.length > maxQueued) {

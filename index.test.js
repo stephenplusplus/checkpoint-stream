@@ -207,6 +207,23 @@ describe('checkpoint-stream', function () {
     })
   })
 
+  it('should emit checkpoint event', function (done) {
+    var source = through.obj()
+
+    var checkpoint = checkpointStream.obj(function (obj) {
+      return obj === OBJ_WITH_CHECKPOINT
+    })
+
+    checkpoint.on('checkpoint', function (data) {
+      assert.strictEqual(data, OBJ_WITH_CHECKPOINT)
+      done()
+    })
+
+    source.pipe(checkpoint)
+    source.push(OBJ_WITH_CHECKPOINT)
+    source.end()
+  })
+
   describe('cfg.maxQueued', function () {
     it('should allow a custom limit', function (done) {
       var MAX_QUEUED = 5

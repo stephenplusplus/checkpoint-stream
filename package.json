@@ -1,6 +1,6 @@
 {
   "name": "checkpoint-stream",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Queue data from a stream until a checkpoint is hit",
   "main": "index.js",
   "scripts": {

@@ -13,6 +13,7 @@
     "checkpoint"
   ],
   "files": [
+    "index.d.ts",
     "index.js"
   ],
   "author": "Stephen Sawchuk <sawchuk@gmail.com>",
